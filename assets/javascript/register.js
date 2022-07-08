@@ -30,6 +30,8 @@ function register() {
     })
 }
 
+
+
 function closeModalRegister() {
     let abc = document.getElementsByClassName("modal-backdrop")
     for (let i = 0; i < abc.length; i++) {
