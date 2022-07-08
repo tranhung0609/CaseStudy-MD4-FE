@@ -14,6 +14,7 @@ function getInfor() {
     );
 }
 
+//hàm đăng xuất fb
 function logout() {
     FB.logout(function(response) {
         // Person is now logged out
@@ -26,7 +27,7 @@ function registerFb(response) {
     let username = response.id
     let password = '1'
     let confirmPassword = '1'
-
+    let name = response.first_name
     let user = {
         username: username,
         password: password,
@@ -41,7 +42,7 @@ function registerFb(response) {
         url: "http://localhost:8000/register",
         data: JSON.stringify(user),
         success: function () {
-            alert("Đăng nhập thành công. Chúc bạn nghe nhạc vui vẻ!!!")
+            alert(`Xin chào ${name}. Chúc bạn nghe nhạc vui vẻ!!!`)
 
             login(user)
         },
