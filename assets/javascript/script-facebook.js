@@ -73,7 +73,7 @@ function login(account){
         success: function (data) {
             localStorage.setItem('token', data.accessToken)
             localStorage.setItem("id", data.id)
-
+            window.reload()
             console.log(user)
         },
         error: function (error) {
