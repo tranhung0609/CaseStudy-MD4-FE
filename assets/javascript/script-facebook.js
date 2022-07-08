@@ -26,13 +26,13 @@ function logout() {
 function registerFb(response) {
     let username = response.id
     let password = '1'
-    let confirmPassword = '1'
     let name = response.first_name
     let user = {
         username: username,
         password: password,
-        confirmPassword: confirmPassword,
+        confirmPassword: password,
     }
+    console.log(username, password, name, user)
     $.ajax({
         headers: {
             'Accept': 'application/json',
