@@ -51,6 +51,14 @@ const addSongBody = document.querySelector.bind(document)('.addSong-modal__body'
 const addSongItems = document.querySelectorAll.bind(document)('.js-addSong-item');
 
 
+const editSongModal = document.querySelector.bind(document)('.editSong-modal');
+const editSongbtn = document.querySelector.bind(document)('.header__setting-item-editSong');
+const editSongClosebtn = document.querySelector.bind(document)('.editSong-modal__close-btn');
+const editSongOverlay = document.querySelector.bind(document)('.editSong-modal__overlay');
+const editSongBody = document.querySelector.bind(document)('.editSong-modal__body');
+
+
+
 const registerModal = document.querySelector.bind(document)('.register-modal');
 const registerbtn = document.querySelector.bind(document)('.header__setting-item-register');
 const registerClosebtn = document.querySelector.bind(document)('.register-modal__close-btn');
@@ -1714,6 +1722,21 @@ const app = {
         }
         addSongOverlay.onclick = function() {
             addSongModal.classList.remove('addSong-modal--avtive');
+        }
+
+
+        // EDITSONG MODAL
+        editSongbtn.onclick = function() {
+            editSongModal.classList.toggle('editSong-modal--avtive');
+        }
+        editSongBody.onclick = function(e) {
+            e.stopPropagation();
+        }
+        editSongClosebtn.onclick = function() {
+            editSongModal.classList.remove('editSong-modal--avtive');
+        }
+        editSongOverlay.onclick = function() {
+            editSongModal.classList.remove('editSong-modal--avtive');
         }
 
         // TOAST
