@@ -16,6 +16,9 @@ function login(){
         url: "http://localhost:8000/login",
         data: JSON.stringify(user),
         success: function (data) {
+            token = data.accessToken
+            id = data.id
+            name = data.username
             localStorage.setItem('token', data.accessToken)
             localStorage.setItem("id", data.id)
             alert("Đăng nhập thành công. Chúc bạn nghe nhạc vui vẻ!!!")
