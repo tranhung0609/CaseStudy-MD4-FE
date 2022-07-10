@@ -16,13 +16,14 @@ function login(){
         url: "http://localhost:8000/login",
         data: JSON.stringify(user),
         success: function (data) {
+            token = data.accessToken
+            id = data.id
+            name = data.username
             localStorage.setItem('token', data.accessToken)
-            accessToken = 1
             localStorage.setItem("id", data.id)
             alert("Đăng nhập thành công. Chúc bạn nghe nhạc vui vẻ!!!")
 
             console.log(user)
-            checkLogin()
         },
         error: function (error) {
             alert("Đăng nhập thất bại! Vui lòng kiểm tra lại thông tin")
@@ -30,19 +31,21 @@ function login(){
         }
     })
 }
-
-function logout(){
-    localStorage.removeItem('token');
-}
+//
+// function logout(){
+//     localStorage.removeItem('token');
+//     alert("Đăng xuất thành công! Cảm ơn bạn đã nghe nhạc của chúng tôi.")
+// }
 
 
 function logout(){
     token=""
     userId=""
     userName=""
+    alert("Đăng xuất thành công! Cảm ơn bạn đã nghe nhạc của chúng tôi.")
+
     localStorage.setItem("token", token)
     localStorage.setItem("id", userId)
     localStorage.setItem("name", userName)
-    showHome()
     // localStorage.removeItem('token');
 }
