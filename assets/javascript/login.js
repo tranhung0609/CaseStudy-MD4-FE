@@ -1,4 +1,4 @@
-
+let accessToken = ""
 
 function login(){
     let usn = document.getElementById("username").value;
