@@ -19,10 +19,11 @@ function login(){
             token = data.accessToken
             id = data.id
             name = data.username
+            localStorage.setItem('name',data.username)
             localStorage.setItem('token', data.accessToken)
             localStorage.setItem("id", data.id)
             alert("Đăng nhập thành công. Chúc bạn nghe nhạc vui vẻ!!!")
-
+            location.reload()
             console.log(user)
         },
         error: function (error) {
@@ -43,9 +44,14 @@ function logout(){
     userId=""
     userName=""
     alert("Đăng xuất thành công! Cảm ơn bạn đã nghe nhạc của chúng tôi.")
-
-    localStorage.setItem("token", token)
-    localStorage.setItem("id", userId)
-    localStorage.setItem("name", userName)
-    // localStorage.removeItem('token');
+        window.localStorage.clear()
+        location.reload()
+        localStorage.removeItem('name');
 }
+
+function renameUser(){
+    let name = localStorage.getItem("name");
+    console.log(name)
+    $("#renameUser").html( name.toLocaleUpperCase())
+}
+renameUser()
