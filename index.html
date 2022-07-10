@@ -225,30 +225,6 @@
                                     Trình phát nhạc
                                 </li>
                                 <span class="header__setting-line"></span>
-                                <li class="header__setting-item">
-                                    <i class="fas fa-info-circle"></i>
-                                    Giới thiệu
-                                </li>
-                                <li class="header__setting-item">
-                                    <i class="far fa-flag"></i>
-                                    Góp ý
-                                </li>
-                                <li class="header__setting-item">
-                                    <i class="fas fa-phone-alt"></i>
-                                    Liên hệ
-                                </li>
-                                <li class="header__setting-item">
-                                    <i class="fab fa-adversal"></i>
-                                    Quảng cáo
-                                </li>
-                                <li class="header__setting-item">
-                                    <i class="fas fa-notes-medical"></i>
-                                    Thoả thuận sử dụng
-                                </li>
-                                <li class="header__setting-item">
-                                    <i class="fas fa-shield-alt"></i>
-                                    Chính sách bảo mật
-                                </li>
                                 <li class="header__setting-item-login">
                                     <i class="fa-regular fa-user"></i>
                                     Đăng Nhập
@@ -257,13 +233,17 @@
                                     <i class="fa-regular fa-user"></i>
                                     Đăng Kí
                                 </li>
+                                <li class="header__setting-item-register" onclick="logout()">
+                                    <i class="fa-solid fa-right-from-bracket"></i>
+                                    Đăng Xuất
+                                </li>
                             </ul>
 
 
                         </div>
                         <div class="header__user hover">
-                            <a href="https://www.facebook.com/">
-                                <img src="./assets/img/header/user/56ec9548954e56100f5f.jpg" alt="user" class="header__user-img">
+<!--                            <a href="https://www.facebook.com/">-->
+                                <img src="./assets/img/header/user/anhdaidien.jpg" alt="user" class="header__user-img">
                             </a>
                         </div>
                     </div>
@@ -272,10 +252,10 @@
 
             <div class="main-container-pertional js__container-panes active">
                 <div class="profile">
-                    <a href="https://www.facebook.com/">
-                        <img src="./assets/img/header/user/56ec9548954e56100f5f.jpg" alt="avata" class="profile__img">
+<!--                    <a href="https://www.facebook.com/">-->
+                        <img src="./assets/img/header/user/anhdaidien.jpg" alt="avata" class="profile__img">
                     </a>
-                    <span class="profile__name js__main-color">Lê Văn Sơn</span>
+                    <span class="profile__name js__main-color"></span>
                     <div class="profile__vip mobile-hiden ">
                         <span class="profile__vip-upgrate btn js__toast">Nâng cấp vip</span>
                         <span class="profile__vip-entercode btn js__main-color js__backgroundColor js__toast">Nhập code vip</span>
@@ -1699,7 +1679,7 @@
                             <input type="text" placeholder="Nhập tên đăng nhập" id="username">
                             <label for="password">Mật khẩu</label>
                             <input type="password" placeholder="Nhập mật khẩu" id="password">
-                            <button class="btn-login" onclick="login()">Đăng nhập</button>
+                            <button class="btn-login" onclick="login()" >Đăng nhập</button>
 <!--                            <button class="btn-register"  onclick="showRegister()"  id="l-register">Đăng ký</button>-->
                             <button class="btn-login"><i class="fa-brands fa-facebook"></i> Đăng nhập với FaceBook</button>
                         </div>

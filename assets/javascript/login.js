@@ -28,19 +28,21 @@ function login(){
         }
     })
 }
-
-function logout(){
-    localStorage.removeItem('token');
-}
+//
+// function logout(){
+//     localStorage.removeItem('token');
+//     alert("Đăng xuất thành công! Cảm ơn bạn đã nghe nhạc của chúng tôi.")
+// }
 
 
 function logout(){
     token=""
     userId=""
     userName=""
+    alert("Đăng xuất thành công! Cảm ơn bạn đã nghe nhạc của chúng tôi.")
+
     localStorage.setItem("token", token)
     localStorage.setItem("id", userId)
     localStorage.setItem("name", userName)
-    showHome()
     // localStorage.removeItem('token');
 }
