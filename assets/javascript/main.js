@@ -43,6 +43,14 @@ const loginBody = document.querySelector.bind(document)('.login-modal__body');
 const loginItems = document.querySelectorAll.bind(document)('.js-login-item');
 
 
+const addSongModal = document.querySelector.bind(document)('.addSong-modal');
+const addSongbtn = document.querySelector.bind(document)('.header__setting-item-addSong');
+const addSongClosebtn = document.querySelector.bind(document)('.addSong-modal__close-btn');
+const addSongOverlay = document.querySelector.bind(document)('.addSong-modal__overlay');
+const addSongBody = document.querySelector.bind(document)('.addSong-modal__body');
+const addSongItems = document.querySelectorAll.bind(document)('.js-addSong-item');
+
+
 const registerModal = document.querySelector.bind(document)('.register-modal');
 const registerbtn = document.querySelector.bind(document)('.header__setting-item-register');
 const registerClosebtn = document.querySelector.bind(document)('.register-modal__close-btn');
@@ -1693,6 +1701,20 @@ const app = {
             registerModal.classList.remove('register-modal--avtive');
         }
 
+
+        //ADDSONG MODAL
+        addSongbtn.onclick = function() {
+            addSongModal.classList.toggle('addSong-modal--avtive');
+        }
+        addSongBody.onclick = function(e) {
+            e.stopPropagation();
+        }
+        addSongClosebtn.onclick = function() {
+            addSongModal.classList.remove('addSong-modal--avtive');
+        }
+        addSongOverlay.onclick = function() {
+            addSongModal.classList.remove('addSong-modal--avtive');
+        }
 
         // TOAST
         document.querySelectorAll.bind(document)('.js__toast').forEach((item, index) => {

@@ -52,6 +52,6 @@ function logout(){
 function renameUser(){
     let name = localStorage.getItem("name");
     console.log(name)
-    $("#renameUser").html( name.toLocaleUpperCase())
+    $("#renameUser").html( name.toUpperCase())
 }
 renameUser()
