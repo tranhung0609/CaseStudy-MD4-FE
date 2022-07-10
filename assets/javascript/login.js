@@ -1,4 +1,5 @@
 let accessToken = ""
+let id=""
 
 function login(){
     let usn = document.getElementById("username").value;
@@ -15,15 +16,19 @@ function login(){
         type: 'POST',
         url: "http://localhost:8000/login",
         data: JSON.stringify(user),
+
         success: function (data) {
-            token = data.accessToken
+            console.log(data)
+            accessToken = data.accessToken
+            console.log(token = data.accessToken)
             id = data.id
             name = data.username
             localStorage.setItem('token', data.accessToken)
+            console.log(localStorage.setItem('token', data.accessToken))
             localStorage.setItem("id", data.id)
+            console.log(localStorage.setItem("id", data.id))
             alert("Đăng nhập thành công. Chúc bạn nghe nhạc vui vẻ!!!")
 
-            console.log(user)
         },
         error: function (error) {
             alert("Đăng nhập thất bại! Vui lòng kiểm tra lại thông tin")
