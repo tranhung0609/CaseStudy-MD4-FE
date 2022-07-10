@@ -14,6 +14,7 @@ function getInfor() {
     );
 }
 
+//hàm đăng xuất fb
 function logout() {
     FB.logout(function(response) {
         // Person is now logged out
@@ -25,13 +26,13 @@ function logout() {
 function registerFb(response) {
     let username = response.id
     let password = '1'
-    let confirmPassword = '1'
-
+    let name = response.first_name
     let user = {
         username: username,
         password: password,
-        confirmPassword: confirmPassword,
+        confirmPassword: password,
     }
+    console.log(username, password, name, user)
     $.ajax({
         headers: {
             'Accept': 'application/json',
@@ -41,7 +42,7 @@ function registerFb(response) {
         url: "http://localhost:8000/register",
         data: JSON.stringify(user),
         success: function () {
-            alert("Đăng nhập thành công. Chúc bạn nghe nhạc vui vẻ!!!")
+            alert(`Xin chào ${name}. Chúc bạn nghe nhạc vui vẻ!!!`)
 
             login(user)
         },
@@ -72,7 +73,7 @@ function login(account){
         success: function (data) {
             localStorage.setItem('token', data.accessToken)
             localStorage.setItem("id", data.id)
-
+            window.reload()
             console.log(user)
         },
         error: function (error) {

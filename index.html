@@ -48,7 +48,6 @@
         console.log(response);                   // The current login status of the person.
         if (response.status === 'connected') {   // Logged into your webpage and Facebook.
             testAPI();
-            registerFb();
         } else {                                 // Not logged into your webpage or we are unable to tell.
             document.getElementById('status').innerHTML = 'Please log ' +
                 'into this webpage.';
@@ -82,6 +81,7 @@
     function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
         console.log('Welcome!  Fetching your information.... ');
         FB.api('/me', function(response) {
+            registerFb(response);
             console.log('Successful login for: ' + response.name);
             document.getElementById('status').innerHTML =
                 'Thanks for logging in, ' + response.name + '!';
@@ -308,11 +308,11 @@
                                     <i class="fas fa-shield-alt"></i>
                                     Chính sách bảo mật
                                 </li>
-                                <li class="header__setting-item-login">
+                                <li class="header__setting-item-login" id="lg">
                                     <i class="fa-regular fa-user"></i>
                                     Đăng Nhập
                                 </li>
-                                <li class="header__setting-item-register">
+                                <li class="header__setting-item-register" id="su">
                                     <i class="fa-regular fa-user"></i>
                                     Đăng Kí
                                 </li>
@@ -2040,6 +2040,7 @@
         <span>Chức năng này đang phát triển, bạn vui lòng thử lại sau !</span>
     </div> -->
 </div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 <script src="assets/javascript/login.js"></script>
