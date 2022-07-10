@@ -1,5 +1,4 @@
 let accessToken = ""
-let id=""
 
 function login(){
     let usn = document.getElementById("username").value;
@@ -16,19 +15,16 @@ function login(){
         type: 'POST',
         url: "http://localhost:8000/login",
         data: JSON.stringify(user),
-
         success: function (data) {
-            console.log(data)
-            accessToken = data.accessToken
-            console.log(token = data.accessToken)
+            token = data.accessToken
             id = data.id
             name = data.username
+            localStorage.setItem('name',data.username)
             localStorage.setItem('token', data.accessToken)
-            console.log(localStorage.setItem('token', data.accessToken))
             localStorage.setItem("id", data.id)
-            console.log(localStorage.setItem("id", data.id))
             alert("Đăng nhập thành công. Chúc bạn nghe nhạc vui vẻ!!!")
-
+            location.reload()
+            console.log(user)
         },
         error: function (error) {
             alert("Đăng nhập thất bại! Vui lòng kiểm tra lại thông tin")
@@ -48,9 +44,14 @@ function logout(){
     userId=""
     userName=""
     alert("Đăng xuất thành công! Cảm ơn bạn đã nghe nhạc của chúng tôi.")
-
-    localStorage.setItem("token", token)
-    localStorage.setItem("id", userId)
-    localStorage.setItem("name", userName)
-    // localStorage.removeItem('token');
+        window.localStorage.clear()
+        location.reload()
+        localStorage.removeItem('name');
 }
+
+function renameUser(){
+    let name = localStorage.getItem("name");
+    console.log(name)
+    $("#renameUser").html( name.toUpperCase())
+}
+renameUser()
