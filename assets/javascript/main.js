@@ -58,6 +58,14 @@ const editSongOverlay = document.querySelector.bind(document)('.editSong-modal__
 const editSongBody = document.querySelector.bind(document)('.editSong-modal__body');
 
 
+const playListModal = document.querySelector.bind(document)('.playList-modal');
+const playListbtn = document.querySelector.bind(document)('.header__setting-item-playList');
+const playListClosebtn = document.querySelector.bind(document)('.playList-modal__close-btn');
+const playListOverlay = document.querySelector.bind(document)('.playList-modal__overlay');
+const playListBody = document.querySelector.bind(document)('.playList-modal__body');
+const playListItems = document.querySelectorAll.bind(document)('.js-playList-item');
+
+
 
 const registerModal = document.querySelector.bind(document)('.register-modal');
 const registerbtn = document.querySelector.bind(document)('.header__setting-item-register');
@@ -1738,6 +1746,23 @@ const app = {
         editSongOverlay.onclick = function() {
             editSongModal.classList.remove('editSong-modal--avtive');
         }
+
+
+        // CREATE PLAY LIST MODAL
+        playListbtn.onclick = function() {
+            playListModal.classList.toggle('playList-modal--avtive');
+        }
+        playListBody.onclick = function(e) {
+            e.stopPropagation();
+        }
+        playListClosebtn.onclick = function() {
+            playListModal.classList.remove('playList-modal--avtive');
+        }
+        playListOverlay.onclick = function() {
+            playListModal.classList.remove('playList-modal--avtive');
+        }
+
+
 
         // TOAST
         document.querySelectorAll.bind(document)('.js__toast').forEach((item, index) => {

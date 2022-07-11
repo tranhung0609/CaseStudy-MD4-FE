@@ -21,20 +21,20 @@ function register() {
         data: JSON.stringify(user),
         success: function () {
             alert("Đăng ký thành công. Vui lòng đăng nhập vào hệ thống")
-            $('login-register').modal('show')
+            document.getElementById('login-register').html()
         },
         error: function (error) {
-            alert("Đăng ký thất bại! Vui lòng kiểm tra lại thông tin")
+            alert("Đăng ký thất bại! Có thể do trùng tên đăng nhập hoặc nhập không đúng quy tắc. Vui lòng kiểm tra lại!!!")
             console.log(error)
         },
     })
 }
 
-function closeModalRegister() {
-    let abc = document.getElementsByClassName("modal-backdrop")
-    for (let i = 0; i < abc.length; i++) {
-        abc[i].style.width = 0;
-        abc[i].style.height = 0;
-    }
-    showLogin()
-}
+// function closeModalRegister() {
+//     let abc = document.getElementsByClassName("modal-backdrop")
+//     for (let i = 0; i < abc.length; i++) {
+//         abc[i].style.width = 0;
+//         abc[i].style.height = 0;
+//     }
+//     showLogin()
+// }
