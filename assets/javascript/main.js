@@ -1717,18 +1717,18 @@ const app = {
 
         //add playlist modal
 
-        addPlaylistbtn.onclick = function() {
-            addPlaylistModal.classList.toggle('register-modal--avtive');
-        }
-        addPlaylistBody.onclick = function(e) {
-            e.stopPropagation();
-        }
-        addPlaylistClosebtn.onclick = function() {
-            addPlaylistModal.classList.remove('register-modal--avtive');
-        }
-        addPlaylistOverlay.onclick = function() {
-            addPlaylistModal.classList.remove('register-modal--avtive');
-        }
+        // addPlaylistbtn.onclick = function() {
+        //     addPlaylistModal.classList.toggle('register-modal--avtive');
+        // }
+        // addPlaylistBody.onclick = function(e) {
+        //     e.stopPropagation();
+        // }
+        // addPlaylistClosebtn.onclick = function() {
+        //     addPlaylistModal.classList.remove('register-modal--avtive');
+        // }
+        // addPlaylistOverlay.onclick = function() {
+        //     addPlaylistModal.classList.remove('register-modal--avtive');
+        // }
 
 
 
