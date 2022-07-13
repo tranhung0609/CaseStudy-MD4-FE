@@ -138,7 +138,7 @@
             </div>
             <div class="sidebar__add-playlist">
                 <i class="fas fa-plus js__main-color"></i>
-<!--                <span class="js__main-color js__toast">Tạo playlist mới</span>-->
+                <span class="js__main-color js__toast">Tạo playlist mới</span>
             </div>
 
         </div>
@@ -344,29 +344,7 @@
                                 <div class="option-all__songs">
                                     <ul class="option-all__songs-list songs-list">
                                         <!-- songs-item--active -->
-                                        <!-- <li class="songs-item songs-item--active">
-                                            <div class="songs-item-left">
-                                                <img src="./assets/img/songs/0.webp" alt="danh sanh nhac" class="songs-item-left-img">
-                                                <div class="songs-item-left-body">
-                                                    <h3 class="songs-item-left-body-name">Cưới Luôn Được Không</h3>
-                                                    <span class="songs-item-left-body-singer">Út Nhị x KenPham Remix</span>
-                                                </div>
-                                            </div>
-                                            <div class="songs-item-center">
-                                                <span>Cưới Luôn Được Không (Single)</span>
-                                            </div>
-                                            <div class="songs-item-right">
-                                                <span class="songs-item-right-mv"><i class="fas fa-photo-video"></i></span>
-                                                <span class="songs-item-right-lyric"><i class="fas fa-microphone"></i></span>
-                                                songs-item-right-tym--active
-                                                <span class="songs-item-right-tym">
-                                                    <i class="fas fa-heart songs-item-right-tym-first"></i>
-                                                    <i class="far fa-heart songs-item-right-tym-last"></i>
-                                                </span>
-                                                <span class="songs-item-right-duration">04:05</span>
-                                                <span class="songs-item-right-more"><i class="fas fa-ellipsis-h"></i></span>
-                                            </div>
-                                        </li> -->
+
                                     </ul>
                                 </div>
                             </div>
@@ -725,9 +703,9 @@
                         </div>
                     </div>
                     <div class="grid row">
-                        <ul class="option-music-list songs-list">
+                        <ul class="option-music-list songs-list" id="display-song">
                             <!-- songs-item--active -->
-                            <!-- <li class="songs-item songs-item--active">
+                            <!-- <li class="songs-item songs-item--active"
                                 <div class="songs-item-left">
                                     <img src="./assets/img/songs/0.webp" alt="danh sanh nhac" class="songs-item-left-img">
                                     <div class="songs-item-left-body">
@@ -1972,15 +1950,19 @@
                 <h3 class="header__addSong js__sub-color js__backgroundColor"></h3>
                 <div class="addSong-modal__body-group-wrapper">
                     <div class="addSong-modal__body-group">
-                        <div id="addSong-div">
+                        <div id="addSong-div" >
+
                             <h3>Thêm Nhạc</h3>
                             <label>Tên Bài Hát</label>
-                            <input type="text" placeholder="Nhập tên bài hát mà bạn muốn tải lên">
+                            <input type="text" placeholder="Nhập tên bài hát mà bạn muốn tải lên" id="name">
                             <br>
-                            <input type="file" placeholder="Kéo thả tệp vào đây">
-                            <br>
-                            <option value="">Chọn ca sĩ</option>
-                            <button class="btn-addSong">Upload</button>
+                            <progress value="0" max="100" id="uploader">0%</progress>
+                            <input type="file" value="upload"  id="fileButton" onchange="upload(event)">
+                            <input type="hidden" id="url">
+                            <select id="singer-select">
+
+                            </select>
+                            <button class="btn-addSong" onclick="saveSong()">Upload</button>
                         </div>
                     </div>
                 </div>
@@ -1988,34 +1970,7 @@
         </div>
 
 
-        <!--        modal CreatePlayList-->
-        <!--        createPlayList-modal--acitve-->
-        <div class="playList-modal">
-            <div class="playList-modal__overlay"></div>
-            <div class="playList-modal__body">
-                <div class="playList-modal__close-btn">
-                    <i class="fas fa-times"></i>
-                </div>
-                <h3 class="header__playList js__sub-color js__backgroundColor"></h3>
-                <div class="playList-modal__body-group-wrapper">
-                    <div class="playList-modal__body-group">
-                        <div id="playList-div">
-                            <h3>Tạo PlayList Nhạc</h3>
-                            <label>Tên PlayList</label>
-                            <input type="text" placeholder="Nhập tên bài hát mà bạn muốn tải lên">
-                            <br>
-                            <input type="file" placeholder="Kéo thả tệp vào đây">
-                            <br>
-                            <button class="btn-playList">Upload</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-        <!--        modal EditSong-->
+<!--        modal EditSong-->
         <!--        editSong-modal--acitve-->
         <div class="editSong-modal">
             <div class="editSong-modal__overlay"></div>
@@ -2284,10 +2239,24 @@
     </div> -->
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyBRsY2udqh5-htyc_JWkHiyDyPwFSAJ-9Q",
+        authDomain: "casestudy-md4.firebaseapp.com",
+        projectId: "casestudy-md4",
+        storageBucket: "casestudy-md4.appspot.com",
+        messagingSenderId: "851331606366",
+        appId: "1:851331606366:web:8e8deeeb61e0d7bf6f91cf",
+        measurementId: "G-0HR2W48NGG"
+    };
+    firebase.initializeApp(firebaseConfig);
+</script>
 <script src="assets/javascript/login.js"></script>
 <script src="assets/javascript/register.js"></script>
 
 <script src="./assets/javascript/main.js"></script>
+<script src="assets/javascript/song.js"></script>
+
 </body>
 </html>

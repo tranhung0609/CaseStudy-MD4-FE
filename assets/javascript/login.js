@@ -1,6 +1,8 @@
 let accessToken = ""
+let name=""
+let id = ""
 
-function login() {
+function login(){
     let usn = document.getElementById("username").value;
     let pw = document.getElementById("password").value;
     let user = {
@@ -16,14 +18,17 @@ function login() {
         url: "http://localhost:8000/login",
         data: JSON.stringify(user),
         success: function (data) {
-            token = data.accessToken
+            accessToken = data.accessToken
             id = data.id
             name = data.username
-            localStorage.setItem('name', data.username)
+            localStorage.setItem('name',data.username)
             localStorage.setItem('token', data.accessToken)
-            localStorage.setItem("id", data.id)
+            localStorage.setItem('id', data.id)
             alert("Đăng nhập thành công. Chúc bạn nghe nhạc vui vẻ!!!")
             location.reload()
+
+            console.log(data)
+
             document.getElementById('hidelogin').style.display = 'none'
             console.log(user)
         },
@@ -33,7 +38,6 @@ function login() {
         }
     })
 }
-
 //
 // function logout(){
 //     localStorage.removeItem('token');

@@ -74,6 +74,12 @@ const registerOverlay = document.querySelector.bind(document)('.register-modal__
 const registerBody = document.querySelector.bind(document)('.register-modal__body');
 const registerItems = document.querySelectorAll.bind(document)('.js-register-item');
 
+// const addPlaylistModal = document.querySelector.bind(document)('.addPlaylist-modal');
+// const addPlaylistbtn = document.querySelector.bind(document)('.header__setting-item-addPlaylist');
+// const addPlaylistClosebtn = document.querySelector.bind(document)('.addPlaylist-modal__close-btn');
+// const addPlaylistOverlay = document.querySelector.bind(document)('.addPlaylist-modal__overlay');
+// const addPlaylistBody = document.querySelector.bind(document)('.addPlaylist-modal__body');
+
 const tabs = document.querySelectorAll.bind(document)('.tabs-item');
 const panes = document.querySelectorAll.bind(document)('.panes-item');
 const sideBarTabs = document.querySelectorAll.bind(document)('.js__sidebar-tabs');
@@ -1716,6 +1722,23 @@ const app = {
         registerOverlay.onclick = function() {
             registerModal.classList.remove('register-modal--avtive');
         }
+
+        //add playlist modal
+
+        // addPlaylistbtn.onclick = function() {
+        //     addPlaylistModal.classList.toggle('register-modal--avtive');
+        // }
+        // addPlaylistBody.onclick = function(e) {
+        //     e.stopPropagation();
+        // }
+        // addPlaylistClosebtn.onclick = function() {
+        //     addPlaylistModal.classList.remove('register-modal--avtive');
+        // }
+        // addPlaylistOverlay.onclick = function() {
+        //     addPlaylistModal.classList.remove('register-modal--avtive');
+        // }
+
+
 
 
         //ADDSONG MODAL
